@@ -4,11 +4,17 @@ NOTA: con la segunda letra en upper y la ante  penúltima en upper.
 */
 
 let str = "fooziman";
-let strArray = [...str];
 
+// Method 1
+let strArray = [...str];
 strArray[1] = strArray[1].toUpperCase();
 strArray[6] = strArray[6].toUpperCase();
 
-let strPatch = strArray.join('');
+// Method 2
+// let strArray = str.split('');
+// strArray.splice(1, 1, 'O');
+// strArray.splice(6, 1, 'A');
 
-console.log(strPatch);
+str = strArray.join('');
+
+console.log(str);

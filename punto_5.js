@@ -24,27 +24,45 @@ let personas = [{
     }
 ];
 
-// let idx = 0;
-// let nPersonas = personas.length;
+let countM = 0, countm = 0;
+let nPersonas = personas.length;
 
-// for(; idx < nPersonas; idx++){
+// Method 1
 
-//     if(personas[idx].edad >= 18){
-//         log(`\n${personas[idx].nombre.toUpperCase()} es mayor de edad`);
+let idx = 0;
+let mayorArray = [], menorArray = [];
+
+for(; idx < nPersonas; idx++){
+
+    if(personas[idx].edad >= 18){
+        mayorArray[idx] = personas[idx].nombre.toUpperCase();
+        countM++;
         
-//     } else{
-//         log(`\n${personas[idx].nombre.toUpperCase()} es menor de edad`);
-//     }
-// }
-// log(`\nTotal de personas: ${nPersonas}\n`);
+    } else{
+        menorArray[idx] = personas[idx].nombre.toUpperCase();
+        countm++;
+    }
+}
+let mayores = mayorArray.filter(Boolean); 
+let menores = menorArray.filter(Boolean);
+// Boolean is a constructor and function that returns true or false according to the value
+// null, false, 0 and NaN are false (there is no value)
+
+log(`
+Personas mayores: ${mayores.join(', ')} (${countM})
+Personas menores: ${menores.join(', ')} (${countm})
+Total de personas: ${nPersonas}\n`);
 
 // Method 2
 
-personas.map((persona) => {persona.edad >= 18 
-    ? log(`\n${persona.nombre.toUpperCase()} es mayor de edad`)
-    : log(`\n${persona.nombre.toUpperCase()} es menor de edad`)
-});
+// personas.map((persona) => {persona.edad >= 18 
+//     ? countM++
+//     : countm++
+// });
 
-let nPersonas = personas.length;
-log(`\nTotal de personas: ${nPersonas}\n`);
+// log(`
+// Personas mayores: ${countM}
+// Personas menores: ${countm}
+// Total de personas: ${nPersonas}\n`);
+
 // shorthand IF ELSE can also be stored in const variable to show after.

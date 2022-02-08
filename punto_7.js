@@ -77,10 +77,31 @@ Total de no stableCoin: ${countNoStable}
 Cripto de mayor reserva: ${maxCripto.toUpperCase()}
 `);
 
-// Method 2 for max numbers
+// Method 2 
 
+// Get stable and noStableCoin
+
+// function totalStable() {
+//     let stable = criptos.filter(coin => coin.stableCoin == true);
+//     return stable.length;
+// }
+// function totalNoStable() {
+//     let noStable = criptos.filter(coin => coin.stableCoin == false);
+//     return noStable.length;
+// }
+
+// For max numbers
 // let max = Math.max.apply(null, +Wallet.criptos[i].usd);
 
 // Math.max only accepts numbers separated by , (5, 6, 7)
 // apply() calls a function with this || null || undefined on its first parameter
-// to assign each value in an array-like-object specified on its second parameter and return it.
+// to assign each value in an array-like-object specified on its second parameter and return it
+
+// or simply copy one by one with ...
+
+// let array = [3, 1, 5, 0, 9];
+// let max = Math.max(...array);
+// log(max);
+
+
+// Method 3 --> Memorization (?)

@@ -20,9 +20,11 @@ const log = console.log;
 
 // Sync promises
 
+urlUsers = 'https://jsonplaceholder.typicode.com/users';
+
 function getUsers(){
 
-    axios.get('https://jsonplaceholder.typicode.com/users')
+    axios.get(urlUsers)
     .then(response => log(response.data))
     .catch(error => log(error))
 }
